@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <include
+        android:id="@+id/toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/tool_bar" />
+
+    <RelativeLayout
+        android:id="@+id/contentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolBar"
+        android:background="#FFFFFF" >
+
+        <Button
+            android:id="@+id/find"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/border_button_selector"
+            android:minHeight="50dp"
+            android:paddingLeft="60dp"
+            android:paddingRight="60dp"
+            android:text="@string/find"
+            android:textColor="@color/yellow_text_selector"
+            android:textSize="18sp" />
+
+        <RelativeLayout
+            android:id="@+id/searBarLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/find"
+            android:layout_alignParentTop="true"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin" >
+
+            <EditText
+                android:id="@+id/searchEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/edit_text_bg"
+                android:hint="@string/email"
+                android:imeOptions="actionNext"
+                android:inputType="textEmailAddress"
+                android:maxLength="20"
+                android:maxLines="1"
+                android:padding="10dp"
+                android:textColor="#4d4dff"
+                android:textColorHint="#9a9aff"
+                android:textSize="18sp" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

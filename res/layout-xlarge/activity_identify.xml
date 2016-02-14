@@ -1,0 +1,202 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.mad.nudgespot.IdentifyActivity" >
+
+    <include
+        android:id="@+id/toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/tool_bar" />
+
+    <RelativeLayout
+        android:id="@+id/contentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolBar"
+        android:background="#FFFFFF" >
+
+        <Button
+            android:id="@+id/identify"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/border_button_selector"
+            android:minHeight="60dp"
+            android:paddingLeft="70dp"
+            android:paddingRight="70dp"
+            android:text="@string/identify"
+            android:textColor="@color/yellow_text_selector"
+            android:textSize="22sp" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/identify"
+            android:layout_alignParentTop="true"
+            android:paddingBottom="35dp" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <RelativeLayout
+                    android:id="@+id/otherDetailsLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/activity_vertical_margin"
+                    android:paddingLeft="@dimen/activity_horizontal_margin"
+                    android:paddingRight="@dimen/activity_horizontal_margin"
+                    android:paddingTop="@dimen/activity_vertical_margin" >
+
+                    <EditText
+                        android:id="@+id/name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/edit_text_bg"
+                        android:hint="@string/name"
+                        android:imeOptions="actionNext"
+                        android:inputType="textPersonName"
+                        android:maxLength="50"
+                        android:maxLines="1"
+                        android:padding="20dp"
+                        android:textColor="#4d4dff"
+                        android:textColorHint="#9a9aff"
+                        android:textSize="22sp" />
+
+                    <EditText
+                        android:id="@+id/email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/name"
+                        android:layout_marginTop="15dp"
+                        android:background="@drawable/edit_text_bg"
+                        android:hint="@string/email"
+                        android:imeOptions="actionNext"
+                        android:inputType="textEmailAddress"
+                        android:maxLength="20"
+                        android:maxLines="1"
+                        android:padding="20dp"
+                        android:textColor="#4d4dff"
+                        android:textColorHint="#9a9aff"
+                        android:textSize="22sp" />
+
+                    <EditText
+                        android:id="@+id/age"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/email"
+                        android:layout_marginTop="15dp"
+                        android:background="@drawable/edit_text_bg"
+                        android:hint="@string/age"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:maxLength="3"
+                        android:maxLines="1"
+                        android:padding="20dp"
+                        android:textColor="#4d4dff"
+                        android:textColorHint="#9a9aff"
+                        android:textSize="22sp" />
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="1.5dp"
+                    android:layout_below="@id/otherDetailsLayout"
+                    android:layout_marginTop="30dp"
+                    android:background="#999999" />
+
+                <RelativeLayout
+                    android:id="@+id/genderDetailsLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/divider"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="35dp" >
+
+                    <TextView
+                        android:id="@+id/heading"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:padding="20dp"
+                        android:text="@string/gender"
+                        android:textColor="#999999"
+                        android:textSize="28sp" />
+
+                    <RelativeLayout
+                        android:id="@+id/gender"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/heading"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="35dp" >
+
+                        <RelativeLayout
+                            android:id="@+id/maleGender"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="0dp" >
+
+                            <CheckBox
+                                android:id="@+id/maleBox"
+                                android:layout_width="55dp"
+                                android:layout_height="55dp"
+                                android:layout_centerVertical="true"
+                                android:background="@drawable/check_box_selector"
+                                android:button="@null"
+                                android:gravity="center"
+                                android:padding="0dp" />
+
+                            <TextView
+                                android:id="@+id/maleText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_toRightOf="@id/maleBox"
+                                android:padding="15dp"
+                                android:text="@string/male"
+                                android:textColor="#4d4dff"
+                                android:textSize="22sp" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/femaleGender"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="0dp"
+                            android:layout_toRightOf="@id/maleGender" >
+
+                            <CheckBox
+                                android:id="@+id/femaleBox"
+                                android:layout_width="55dp"
+                                android:layout_height="55dp"
+                                android:layout_centerVertical="true"
+                                android:background="@drawable/check_box_selector"
+                                android:button="@null"
+                                android:gravity="center"
+                                android:padding="0dp" />
+
+                            <TextView
+                                android:id="@+id/femaleText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_toRightOf="@id/femaleBox"
+                                android:padding="15dp"
+                                android:text="@string/female"
+                                android:textColor="#4d4dff"
+                                android:textSize="22sp" />
+                        </RelativeLayout>
+                    </RelativeLayout>
+                </RelativeLayout>
+            </RelativeLayout>
+        </ScrollView>
+    </RelativeLayout>
+
+</RelativeLayout>
